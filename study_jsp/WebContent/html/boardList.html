@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+	.page_css{
+		border: 1px solid black; background-color: white;
+		width: 30px; display: inline-block;
+		text-align: center;
+	}
+	.btn_css{
+		border: 1px solid black; background-color: white;
+		width: 70px; display: inline-block;
+		text-align: center;
+	}
+	.search_div{
+		margin-right: 205px;
+	}
+	.h_div{
+		margin-right: 430px;
+	}
+	
+	#list_div{
+		margin-top: 200px;
+		margin-left: 500px;
+	}
+
+</style>
+<meta charset="EUC-KR">
+<title>게시판 목록</title>
+</head>
+<body>
+<div id="list_div">
+<h3 class="h_div">게시판 목록</h3>
+	<div id="search_div" class="search_div">
+		<form>
+			<select name="search">
+				<option selected value="s_title">제목</option>
+				<option value="s_no">글번호</option> 
+				<option value="s_content">내용</option>
+				<option value="s_no_con">제목+내용</option>
+			</select>
+			<input type="text" id="s_text"/>
+			<input type="button" id="s_btn" value="검색" class="btn_css"/>
+			<input type="button" id="w_btn" value="글쓰기" class="btn_css"/>
+			<input type="button" id="out_btn" value="로그아웃" class="btn_css"/>
+		</form>	
+	</div>
+		
+	<div id="list_form">
+		<table border="1">
+			<colgroup>
+				<col width="10%"/>
+				<col width="*"/>
+				<col width="15%"/>
+				<col width="20%"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">글번호</th>
+					<th scope="col">제목</th>
+					<th scope="col">작성자</th>
+					<th scope="col">작성일</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><a href="./boardRead.html"/>게시판 목록을 작성하자</td>
+					<td>홍길동</td>
+					<td>2017.09.13</td>
+				</tr>	
+				
+				<tr>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+				</tr>	
+				
+				<tr>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+				</tr>
+				
+				<tr>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+					<td>　</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="page_div">
+		<div>
+			<a href="#" class="page_css"> << </a>
+			<a href="#" class="page_css">  < </a>
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+			<a href="#">6</a>
+			<a href="#">7</a>
+			<a href="#">8</a>
+			<a href="#">9</a>
+			<a href="#">10</a>
+			<a href="#" class="page_css"> > </a>
+			<a href="#" class="page_css"> >> </a>
+		</div>
+	</div>
+
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#w_btn").on("click", function(e){
+				e.preventDefault();
+				fn_w_btn();
+			});
+			$("#out_btn").on("click", function(e){
+				e.preventDefault();
+				fn_out_btn();
+			});
+		});
+
+		function fn_w_btn(){
+			location.href="boardWrite.html";
+		}
+		function fn_out_btn(){
+			location.href="signIn.html";
+		}
+	</script>	
+
+</body>
+</html>

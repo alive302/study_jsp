@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<style type="text/css">
+	.btn_css{
+		border: 1px solid black; background-color: white;
+		width: 70px; display: inline-block; height: 30px;
+		text-align: center;
+		margin-left: 280px;
+		margin-top: 10px;
+	}
+	
+	#board_read{
+		margin-top: 100px;
+		margin-left: 500px;
+	}
+</style>
+
+<meta charset="EUC-KR">
+<title>게시판 목록</title>
+</head>
+<body>
+<div id="board_read">
+	<h3>게시판 상세</h3>
+	<form>
+		<table border="1">
+			<colgroup>
+				<col width="15%"/>
+				<col width="*"/>
+				<col width="25%"/>
+				<col width="*"/>
+			</colgroup>
+			
+			<tr>
+				<td>작성자</td>
+				<td>홍길동</td>
+				<td>작성일</td>
+				<td>2017.09.13</td>
+			</tr>
+			
+			<tr>
+				<td>제목</td>
+				<td colspan="3">게시판 목록을 작성하자</td>
+			</tr>
+			
+			<tr>
+				<td>내용</td>
+				<td colspan="3" width="500px"><textarea id="content" name="content" style="height: 300px; width: 98%" readonly="readonly">게시판 상세를 입력</textarea></td>
+			</tr>	
+		</table>
+	</form>
+	<div>
+		<input type="button" id="cancel_btn" value="뒤로" class="btn_css"/>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#cancel_btn").on("click", function(e){
+			e.preventDefault();
+			fn_cancel_btn();
+		})
+	});
+	
+	function fn_cancel_btn(){
+		location.href="boardList.html";
+	}
+	
+</script>
+
+</body>
+</html>

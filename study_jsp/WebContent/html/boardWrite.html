@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+	.btn_css{
+		border: 1px solid black; background-color: white;
+		width: 70px; display: inline-block; height: 30px;
+		text-align: center;
+	}
+	.btn_div{
+		position: relative;
+		top: 10px;
+		width: 100%;
+		height: 40px;
+		margin-left: 300px;
+	}
+	
+	#board_write{
+		margin-top: 100px;
+		margin-left: 400px;
+	}	
+</style>
+<meta charset="EUC-KR">
+<title>게시판 입력</title>
+</head>
+<body>
+
+<div id="board_write">
+	<h3>게시판 입력</h3>
+	<form>
+		<table border="1">
+			<colgroup>
+				<col width="100px"/>
+				<col width="*"/>
+			</colgroup>
+			
+			<tr>
+				<td>제목</td>
+				<td><input type="text" id="title_name" size="100"></td>
+			</tr>
+			
+			<tr>
+				<td>내용</td>
+				<td><textarea id="content" name="content" style="height: 500px; width: 98%"></textarea></td>
+			</tr>	
+		</table>
+	</form>
+	<div class="btn_div">
+		<input type="submit" id="save_btn" value="저장" class="btn_css"/>
+		<input type="button" id="cancel_btn" value="취소" class="btn_css"/>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#cancel_btn").on("click", function(e){
+			e.preventDefault();
+			fn_cancel_btn();
+		})
+		$("#save_btn").on("click", function(e){
+			e.preventDefault();
+			fn_save_btn();
+		})
+	});
+	
+	function fn_cancel_btn(){
+		location.href="boardList.html";
+	}
+	
+	function fn_save_btn(){
+		location.href="boardList.html";
+	}
+</script>
+
+</body>
+</html>
