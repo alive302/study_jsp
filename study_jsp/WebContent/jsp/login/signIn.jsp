@@ -53,7 +53,7 @@
 
 <script type="text/javascript">
 	function fn_sign_btn(){
-		location.href = "signUp.jsp";
+		location.href = "./jsp/login/signUp.jsp";
 	}
 	
 	function check_login(){
@@ -74,7 +74,7 @@
 <body>
 	<div id="login_div">
 		<h3>로그인</h3>
-		<form id="in_frm" name="in_frm" method="post" action="signProcess.jsp" onsubmit="return check_login()">
+		<form id="in_frm" name="in_frm" method="post" action="./jsp/login/signProcess.jsp" onsubmit="return check_login()">
 			<div class="sign_In">
 				<div class="login_form">
 					<div class="login_key">

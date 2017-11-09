@@ -72,8 +72,8 @@
 <script type="text/javascript">
 
 function login(){
-	// 취소 버튼 클릭시 로그인 화면으로 이동.
-	location.href = "signIn.jsp";
+	// 취소 버튼 클릭시 index 화면으로 이동.
+	location.href = "/study_jsp/index.jsp";
 }
 
 function check_form(){

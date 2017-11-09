@@ -46,7 +46,7 @@
 					//out.println("아이디 사용불가");
 					out.println("<script>");
 					out.println("alert('입력하신 아이디는 사용할수 없습니다.')");
-					out.println("location.href='signIn.jsp'");
+					out.println("location.href='signUp.jsp'");
 					out.println("</script>");
 				}else{
 					// id 값이 중복이 아닌경우.
@@ -66,7 +66,8 @@
 					pstmt.executeUpdate();
 					
 					out.println("<script>");
-					out.println("location.href='signIn.jsp'");
+					out.println("alert('회원가입 되었습니다.')");
+					out.println("location.href='/study_jsp/index.jsp'");
 					out.println("</script>");
 				}
 			}else if(process.equals("signin")){
@@ -81,35 +82,24 @@
 					rs = pstmt.executeQuery();
 					
 					// 로그인정보를 가지고 게시판 목록 화면으로 이동.
-					while(rs.next()){
+					if(rs.next()){
 						if(rs.getString(1).equals(user_id) && rs.getString(3).equals(user_pw)){
-							//out.println(rs.getString(2)+" 님 환영합니다.");
-							//out.println(rs.getString(1) + "****" + rs.getString(2));
 							out.println("<script>");
 							out.println("alert('["+rs.getString(2)+"] 님 환영합니다.')");
 							out.println("location.href = '../board/boardList.jsp?user_id="+rs.getString(1)+"&user_nm="+rs.getString(2)+"'");
 							out.println("</script>");
 						} else {
 							// 왜 동작을 안할까 ㅠㅠ
-							out.println("<script>");
-							out.println("alert('아이디 또는 비밀번호가 틀렸습니다.')");
-							out.println("location.href='signIn.jsp'");
-							out.println("</script>");
+							out.println("아이디 또는 비밀번호가 틀렸습니다.");
+							//out.println("<script>");
+							//out.println("alert('아이디 또는 비밀번호가 틀렸습니다.')");
+							//out.println("location.href='/study_jsp/index.jsp'");
+							//out.println("</script>");
 						}
-						//out.println(rs.getString(1) + "****" + rs.getString(2));
-						//out.println("<script>");
-						//out.println("location.href = '../board/boardList.jsp?user_id="+rs.getString(1)+"&user_nm="+rs.getString(2)+"'");
-						//out.println("</script>");
 					}
-					// request.setAttribute(key, value);
+					// ** request.setAttribute(key, value);
 					//request.setAttribute("user_id", user_id);
 					//request.setAttribute("user_nm", user_nm);
-					
-					//out.println("<script>");
-					//out.println("로그인되었습니다.");
-					//out.println("alert('로그인되었습니다.')");
-					//out.println("location.href = '../board/boardList.jsp?user_id="+user_id+"&user_nm="+user_nm+"'");
-					//out.println("</script>");
 					
 				}else{
 					// id 가 없는 경우.
@@ -117,7 +107,7 @@
 					
 					out.println("<script>");
 					out.println("alert('등록되지 않은 ID 입니다. 가입페이지로 이동합니다.')");
-					out.println("location.href='signUp.jsp'");
+					out.println("location.href='./jsp/login/signUp.jsp'");
 					out.println("</script>");
 				}
 			}
