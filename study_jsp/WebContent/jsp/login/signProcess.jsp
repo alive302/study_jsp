@@ -107,7 +107,7 @@
 					
 					out.println("<script>");
 					out.println("alert('등록되지 않은 ID 입니다. 가입페이지로 이동합니다.')");
-					out.println("location.href='./jsp/login/signUp.jsp'");
+					out.println("location.href='./signUp.jsp'");
 					out.println("</script>");
 				}
 			}
